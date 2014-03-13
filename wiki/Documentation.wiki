@@ -1,15 +1,5 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= Documentation =
 
-Add your content here.
-
-
-http://code.google.com/osm2hydro/svn/trunk/doc/_build/html/index.html
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+http://osm2hydro.googlecode.com/svn/trunk/doc/_build/html/index.html
