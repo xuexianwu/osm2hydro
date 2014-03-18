@@ -1,5 +1,0 @@
-#summary One-sentence summary of this page.
-
-= Documentation =
-
-http://osm2hydro.googlecode.com/svn/trunk/doc/_build/html/index.html
