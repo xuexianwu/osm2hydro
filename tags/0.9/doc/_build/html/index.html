@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to the osm2hydro Documentation &mdash; osm2hydro 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="osm2hydro 0.1 documentation" href="#" />
+    <link rel="next" title="Using the tools" href="usage.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="#"><img src="_static/logo.jpg" border="0" alt="py4sci"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Using the tools"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">home</a>|&nbsp;</li>
+        <li><a href="search.html">search</a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to the osm2hydro Documentation</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li><a class="reference internal" href="#creating-the-paved-area-grids">Creating the paved area grids</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#osm2hydro">osm2hydro</a></li>
+<li><a class="reference internal" href="#osm2shp">osm2shp</a></li>
+<li><a class="reference internal" href="#map2shape">map2shape</a></li>
+<li><a class="reference internal" href="#gdal-density">gdal_density</a></li>
+<li><a class="reference internal" href="#dem-filter">dem_filter</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#todo">TODO</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="next chapter">Using the tools</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-the-osm2hydro-documentation">
+<h1>Welcome to the osm2hydro Documentation<a class="headerlink" href="#welcome-to-the-osm2hydro-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This document describes osm2hydro. osm2hydro is a set of (python) tools
+that can be used to extract information from OpenStreetMap (OSM) and
+the Shuttle Radar Topography Mission (SRTM) to
+kick-start hydrological and hydraulic modelling. The output consists of a set of maps
+that can be used to kick-start hydrological and hydraulic modelling.</p>
+</div>
+<div class="section" id="how-it-works">
+<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>From an OSM file the tools create shapefiles of selected features (OSM tags) and use
+those to create  gridded maps with fraction of paved area, fraction of open water and
+fraction of unpaved area in each cell.  The tools are fully configurable
+and can be used to generate other maps. They are part of the
+Deltares OpenEarth initiative (<a class="reference external" href="https://publicwiki.deltares.nl/display/OET/OpenEarth">https://publicwiki.deltares.nl/display/OET/OpenEarth</a>)
+and can be downloaded from google code at <a class="reference external" href="http://osm2hydro.googlecode.com">http://osm2hydro.googlecode.com</a>) where this
+documentation is also hosted (<a class="reference external" href="http://osm2hydro.googlecode.com/svn/trunk/doc/_build/html/index.html">http://osm2hydro.googlecode.com/svn/trunk/doc/_build/html/index.html</a>).</p>
+<p>Additionally, the tools can also aid in the use of OSM data in the schematisation
+of hydraulic overland flow models. OSM line elements that represent
+elevated landscape features are burnt onto an elevation map. The tools
+are setup to download and use
+the Shuttle Radar Topography Mission 90 meter elevation map
+(<a class="reference external" href="http://www2.jpl.nasa.gov/srtm/">http://www2.jpl.nasa.gov/srtm/</a>).</p>
+</div>
+<div class="section" id="creating-the-paved-area-grids">
+<h2>Creating the paved area grids<a class="headerlink" href="#creating-the-paved-area-grids" title="Permalink to this headline">¶</a></h2>
+<p>The osm2hydro script extract maps of paved area, water and unpaved areas using
+the following steps (see also Figure 1):</p>
+<ol class="arabic simple">
+<li>Cut-out a specific region (for the model) from a downloaded OSM file
+using osmconvert (<a class="reference external" href="http://wiki.openstreetmap.org/wiki/Osmconvert">http://wiki.openstreetmap.org/wiki/Osmconvert</a>)</li>
+<li>Convert the OSM file to a set of shape files using ogr2ogr (from gdal version 1.10)</li>
+<li>Convert the shape files to a set of grids (gdal. poly_density, <a class="reference external" href="http://www.gdal.org/">http://www.gdal.org/</a>)</li>
+<li>Perform corrections on the grids and shapes and string everything together
+(OSM2hydro, <a class="reference external" href="https://publicwiki.deltares.nl/display/OET/OpenEarth">https://publicwiki.deltares.nl/display/OET/OpenEarth</a>)</li>
+</ol>
+<p>The figure below shows the steps in a flow chart:</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/Fig-1-schematic.png"><img alt="_images/Fig-1-schematic.png" src="_images/Fig-1-schematic.png" style="width: 440.0px; height: 380.0px;" /></a>
+</div>
+<p>Figure 1 Flow chart of the steps taken to derive land use
+(and specifically paved area fraction) maps from OSM</p>
+<p>In some areas the different OSM land-use polygons nearly cover the whole area.
+In those places the LU polygons can be used to generate the paved, unpaved and
+water covered area maps we are aiming to derive. However, in large areas
+the coverage is (very) incomplete. osm2hydro can use the information of the road network, which
+is usually nearly complete to estimate urban and or paved areas. The steps taken in the script are described below
+(see the code for details).</p>
+<p>After the polygons have been extracted from the OSM file (see the <a class="reference internal" href="#osm2shp">osm2shp</a> documentation fro details)
+the first step is
+to generate high resolution grids from the shape files. The high resolution
+grids by default have a 10 times higher resolution in both the X and Y
+direction. The high resolution grids are then resampled to the final
+resolution, thus allowing the determination of fractional coverage in each cell.
+For all road classes an estimated width is configured and this is used
+to generate a (high resolution) grid in which the width is used to
+calculate the fraction covered by roads (assuming the road crossed that
+cell in a straight line). At the same time a road-density map is
+calculated using the same information but in which all roads have a unit width.
+From the density maps and a configurable percentile in the
+road density map, a map maximum density (<img class="math" src="_images/math/c16e99b6a4570c9771a0caaead3006814e2b3878.png" alt="den^{Max}"/>) and a threshold value (<img class="math" src="_images/math/ed5199acdd59a321dce0fc96654236fe518aa409.png" alt="den^{TH}"/>)
+for urban areas is determined. These values are then used in a simple
+equation (for all cells :math:` &gt; den^{TH}`) to estimate the paved area within a cell:</p>
+<div class="math">
+<p><img src="_images/math/074bef26fd8f5ec8419c75c983e694cc61217778.png" alt="paved = min : 1.0, (den^{cell} + f (den^{Max} - den^{TH}))/den^{Max}"/></p>
+</div><p>The above equation (where, <img class="math" src="_images/math/0001d02b63ede2fe3219e05a7cd09c82ae6298b6.png" alt="f"/> a scaling factor is 0.75) basically generates
+paved area (houses etc) for all cells that have a road density higher than
+the threshold. This map (of paved area fraction) is subsequently merged with the
+paved area map that is determined from the polygons found in OSM.
+The merge is done by first applying a multiplication factor to the paved
+area determined from the road density and then taking the maximum of the two
+maps. The multiplication factor (0.8 by default) represents an estimated
+average paved area fraction in urban areas.
+In a third step the resulting map is merged with the maps that holds
+the fraction of road cover in the cell by adding the two maps together
+while maximising the result to 1.0.</p>
+<p>Next two other maps are created, one representing the fraction of
+unpaved land use (from polygons that represent “green” areas) and one
+representing the fraction of open water. The open water fraction maps
+is derived from a combination of waterways in OSM, taking into account
+the river width if it is available, and land use classified as water
+(the combined water maps are maximized at 1.0).</p>
+<p>Generally, the sum of the three maps (paved, unpaved, water) is not 1,
+therefore the maps are adjusted using the assumption that the water
+fraction map and the roads fraction maps are correct using the following steps:</p>
+<ol class="arabic simple">
+<li>Add the water fraction and paved area fraction maps and subtract the surplus  (&gt; 1.0) from the paved area map.</li>
+<li>If the paved area fraction is not large enough to supply all the surplus  coverage the surplus is subtracted from the unpaved fraction map</li>
+<li>If the resulting total cover is larger than 1 it is assumed that the  unpaved polygons are correct and the surplus is subtracted from the paved area any unassigned area in the resulting maps (total coverage &lt; 1.0) is added to  the unpaved fraction map.</li>
+<li>finally, the road fraction map is used to “burn in” road coverage over all open water and unpaved area coverage</li>
+</ol>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using the tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#using-the-command-line-scripts">Using the command-line scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#using-the-tools-from-within-python">Using the tools from within python</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="osm2hydro">
+<h2>osm2hydro<a class="headerlink" href="#osm2hydro" title="Permalink to this headline">¶</a></h2>
+<p>This is the main script. It needs an .ini file to retrieve it&#8217;s settings
+and execute  programs and scripts.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="osm2hydro.html">osm2hydro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="osm2hydro.html#id1">OSM2hydro</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="osm2shp">
+<h2>osm2shp<a class="headerlink" href="#osm2shp" title="Permalink to this headline">¶</a></h2>
+<p>Osm2shp is a wrapper around ogr2ogr. It uses an ini type configuration file
+to extract  specified OSM tags to separate shape files.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="osm2shp.html">osm2shp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="osm2shp.html#dependencies">dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osm2shp.html#ini-file">ini file</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="map2shape">
+<h2>map2shape<a class="headerlink" href="#map2shape" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="map2shape.html">map2shape</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="gdal-density">
+<h2>gdal_density<a class="headerlink" href="#gdal-density" title="Permalink to this headline">¶</a></h2>
+<p>Convert shape files to grids determining fractional coverage within the grids of the
+shape file contents.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gdal_density.html">gdal_density</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="dem-filter">
+<h2>dem_filter<a class="headerlink" href="#dem-filter" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dem_filter.html">dem_filter</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+<div class="section" id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Using the tools"
+             >next</a> |</li>
+        <li><a href="#">home</a>|&nbsp;</li>
+        <li><a href="search.html">search</a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, 2014 Hesssel Winsemius, Jaap Schellekens, Gennadii Donchyts.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

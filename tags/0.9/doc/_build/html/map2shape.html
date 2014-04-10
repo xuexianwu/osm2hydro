@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>map2shape &mdash; osm2hydro 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="osm2hydro 0.1 documentation" href="index.html" />
+    <link rel="next" title="gdal_density" href="gdal_density.html" />
+    <link rel="prev" title="osm2shp" href="osm2shp.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="index.html"><img src="_static/logo.jpg" border="0" alt="py4sci"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gdal_density.html" title="gdal_density"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="osm2shp.html" title="osm2shp"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">home</a>|&nbsp;</li>
+        <li><a href="search.html">search</a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="osm2shp.html"
+                        title="previous chapter">osm2shp</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gdal_density.html"
+                        title="next chapter">gdal_density</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/map2shape.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-map2shape">
+<span id="map2shape"></span><h1>map2shape<a class="headerlink" href="#module-map2shape" title="Permalink to this headline">¶</a></h1>
+<p>This script converts gridded river sections into a shape file.</p>
+<p>Input:</p>
+<blockquote>
+<div>rivermap:       PCRaster map, containing the river sections as integers
+drainmap:       Accumulated drainage map over the pixels, contained in rivermap.__add__</div></blockquote>
+<p>Both inputs are produced by a script called &#8216;srtm_burn_process.bat&#8217; (no shell-version available yet)
+This script can be run from within srtm_burn_process.bat eventually</p>
+<dl class="function">
+<dt id="map2shape.convertCoord">
+<tt class="descclassname">map2shape.</tt><tt class="descname">convertCoord</tt><big>(</big><em>proj_src</em>, <em>proj_trg</em>, <em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#map2shape.convertCoord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a list of x,y pairs in a certain projection to another projection</p>
+<p>input:</p>
+<blockquote>
+<div>proj_src:   string, EPSG or proj4 string referring to projection of source coordinates
+proj_trg:   string, EPSG or proj4 string referring to projection of target coordinates
+x:          NumPy array, vector or 2D array of x-coordinates (source)
+y:          NumPy array, vector or 2D array of y-coordinates (source)</div></blockquote>
+<p>output:</p>
+<blockquote>
+<div>X:          NumPy array, vector or 2D array of x-coordinates (target)
+Y:          NumPy array, vector or 2D array of y-coordinates (target)</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="map2shape.readMap">
+<tt class="descclassname">map2shape.</tt><tt class="descname">readMap</tt><big>(</big><em>fileName</em>, <em>fileFormat</em><big>)</big><a class="headerlink" href="#map2shape.readMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read geographical file into memory</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gdal_density.html" title="gdal_density"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="osm2shp.html" title="osm2shp"
+             >previous</a> |</li>
+        <li><a href="index.html">home</a>|&nbsp;</li>
+        <li><a href="search.html">search</a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, 2014 Hesssel Winsemius, Jaap Schellekens, Gennadii Donchyts.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

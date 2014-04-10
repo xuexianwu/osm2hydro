@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>osm2hydro &mdash; osm2hydro 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="osm2hydro 0.1 documentation" href="index.html" />
+    <link rel="next" title="osm2shp" href="osm2shp.html" />
+    <link rel="prev" title="Using the tools" href="usage.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="index.html"><img src="_static/logo.jpg" border="0" alt="py4sci"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="osm2shp.html" title="osm2shp"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Using the tools"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">home</a>|&nbsp;</li>
+        <li><a href="search.html">search</a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">osm2hydro</a><ul>
+<li><a class="reference internal" href="#id1">OSM2hydro</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="previous chapter">Using the tools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="osm2shp.html"
+                        title="next chapter">osm2shp</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/osm2hydro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-osm2hydro">
+<span id="osm2hydro"></span><h1>osm2hydro<a class="headerlink" href="#module-osm2hydro" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>OSM2hydro<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Execute the osm2hydro script.</p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>osm2hydro.py  -c inifilename [-E extent][-W working dir][-C caseFolder]
+              [-N caseName][-O osm_extract_file][-F osmfile]
+
+-c inifilename
+Optional (overrides the ini settings):
+    -E  extent according to: [xmin, ymin, xmax, ymax]
+    -W working_directory
+    -C caseFolder
+    -N caseName
+    -O osm_extract_file
+    -F osmfile
+</pre></div>
+</div>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>osm2hydro generates hydrological and hydraulic model schematisations 
+from OpenStreetMap data</div></blockquote>
+</div>
+<div class="section" id="status">
+<h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Still under construction by Jaap Schellekens, Hessel Winsemius, Jan Talsma, 
+Ferdinand Diermanse, Ruben Dahm, Reinder Brolsma and Daniel Tollenaar
+TODO: cleanup script, move stuff to functions</div></blockquote>
+</div>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>For osm2hydro, it is mandatory that GDAL version 1.10 or higher is installed.</div></blockquote>
+<dl class="function">
+<dt id="osm2hydro.burn_lines">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">burn_lines</tt><big>(</big><em>shapeFile</em>, <em>mapFile</em>, <em>value</em>, <em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#osm2hydro.burn_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a map with zeros and burned in values at locations where a line shape is present
+shapeFile:      string - Shapefile with line elements that need to be burned
+mapFile:        string - Target GeoTIFF map file that will be written in this step
+value:          string - The value that should be burned into the map
+x:              1-D array - x-axis of target map
+y:              1-D array - y-axis of target map</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.closeLogger">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">closeLogger</tt><big>(</big><em>logger</em>, <em>ch</em><big>)</big><a class="headerlink" href="#osm2hydro.closeLogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the logger</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.configget">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">configget</tt><big>(</big><em>log</em>, <em>config</em>, <em>section</em>, <em>var</em>, <em>default</em><big>)</big><a class="headerlink" href="#osm2hydro.configget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a string from a config file (.ini) and returns a default value if
+the key is not found. If the key is not found it also sets the value 
+with the default in the config-file</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><ul class="first last simple">
+<li>config - python ConfigParser object</li>
+<li>section - section in the file</li>
+<li>var - variable (key) to get</li>
+<li>default - default string</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>string - either the value from the config file or the default value</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.configset">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">configset</tt><big>(</big><em>config</em>, <em>section</em>, <em>var</em>, <em>value</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#osm2hydro.configset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a string in the in memory representation of the config object
+Deos NOT overwrite existing values if overwrite is set to False (default)</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd><ul class="first last simple">
+<li>config - python ConfigParser object</li>
+<li>section - section in the file</li>
+<li>var - variable (key) to set</li>
+<li>value - the value to set</li>
+<li>overwrite (optional, default is False)</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd><ul class="first last simple">
+<li>nothing</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.cutMap">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">cutMap</tt><big>(</big><em>xmin</em>, <em>ymin</em>, <em>xmax</em>, <em>ymax</em>, <em>origMap</em>, <em>transMap</em><big>)</big><a class="headerlink" href="#osm2hydro.cutMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>translateMap translates the tif formatted files from the srtm to PCRaster .map files
+origMap = your_map.tif
+transMap= your_map.map</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.filter_shape">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">filter_shape</tt><big>(</big><em>attribute</em>, <em>value</em>, <em>origShape</em>, <em>transShape</em><big>)</big><a class="headerlink" href="#osm2hydro.filter_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters a shapefile based on a selection of and attribute/value
+attribute:      string - indicating the attribute
+value:          string - the value or comma-separated list of values of the attribute, filtered out
+origShape:      strong - location of original shapefile
+transShape:     string - location of target shapefile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.iniFileSetUp">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">iniFileSetUp</tt><big>(</big><em>configfile</em><big>)</big><a class="headerlink" href="#osm2hydro.iniFileSetUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads .ini file and sets default values if not present</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.projectMap">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">projectMap</tt><big>(</big><em>src_proj</em>, <em>trg_proj</em>, <em>origMap</em>, <em>transMap</em><big>)</big><a class="headerlink" href="#osm2hydro.projectMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>projectMap projects a source map to a targetmap with defined srs
+src_proj = projection of source data
+trg_proj = projection of target data
+origMap = your_map.tif
+transMap= your_map.map</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.readMap">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">readMap</tt><big>(</big><em>fileName</em>, <em>fileFormat</em><big>)</big><a class="headerlink" href="#osm2hydro.readMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read geographical file into memory</p>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd>filename - string holding file name
+fileFormat - a file format string according to the GDAL list of formats</dd>
+<dt>Returns:</dt>
+<dd>x,y,data,FillVal</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.recursive_glob">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">recursive_glob</tt><big>(</big><em>rootdir='.'</em>, <em>suffix=''</em><big>)</big><a class="headerlink" href="#osm2hydro.recursive_glob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepares a list of files in location rootdir, with a suffix</p>
+<p>input:</p>
+<blockquote>
+<div>rootdir:    string, path-name
+suffix:     suffix of required files</div></blockquote>
+<p>output:</p>
+<blockquote>
+<div>fileList:   list-strings, file paths and names</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.reduce_resolution">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">reduce_resolution</tt><big>(</big><em>x</em>, <em>y</em>, <em>data</em>, <em>target_resolution</em><big>)</big><a class="headerlink" href="#osm2hydro.reduce_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduces resolution of a map (contained by x-axis, y-axis and an array) to
+a user-defined target resolution. This is done by a convolution and then picking
+one value per the amount of required resolution values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.removeFinishedProcesses">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">removeFinishedProcesses</tt><big>(</big><em>processes</em><big>)</big><a class="headerlink" href="#osm2hydro.removeFinishedProcesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>given a list of (commandString, process), 
+remove those that have completed and return the result</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.runCommands">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">runCommands</tt><big>(</big><em>commands</em>, <em>maxCpu</em><big>)</big><a class="headerlink" href="#osm2hydro.runCommands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs a list of processes deviding
+over maxCpu</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.setlogger">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">setlogger</tt><big>(</big><em>logfilename</em>, <em>logReference</em><big>)</big><a class="headerlink" href="#osm2hydro.setlogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set-up the logging system. Exit if this fails</p>
+<p>input:</p>
+<blockquote>
+<div>logfilename:    string, referring to the logfile
+logReference:   string, referring to reference used in log lines</div></blockquote>
+<dl class="docutils">
+<dt>output:</dt>
+<dd>ch:             handle, refer to logging object
+logger:         logger object</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.usage">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">usage</tt><big>(</big><em>*args</em><big>)</big><a class="headerlink" href="#osm2hydro.usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print usage information</p>
+<p>&#64;param args: command line arguments given</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="osm2hydro.writeMap">
+<tt class="descclassname">osm2hydro.</tt><tt class="descname">writeMap</tt><big>(</big><em>fileName</em>, <em>fileFormat</em>, <em>x</em>, <em>y</em>, <em>data</em>, <em>FillVal</em><big>)</big><a class="headerlink" href="#osm2hydro.writeMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write geographical data into file</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="osm2shp.html" title="osm2shp"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Using the tools"
+             >previous</a> |</li>
+        <li><a href="index.html">home</a>|&nbsp;</li>
+        <li><a href="search.html">search</a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, 2014 Hesssel Winsemius, Jaap Schellekens, Gennadii Donchyts.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>
